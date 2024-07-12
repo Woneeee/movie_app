@@ -13,7 +13,7 @@
 
 ## 설치 항목
 
-- [ ] react-Router-dom
+- [x] react-Router-dom
 - [ ] styled-components
 - [ ] styled-reset
 - [ ] swiper
