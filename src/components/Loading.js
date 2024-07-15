@@ -15,7 +15,7 @@ const Container = styled.div`
 export const Loading = () => {
   return (
     <Container>
-      <SquareLoader color="#a60606" />
+      <SquareLoader color="crimson" />
     </Container>
   );
 };

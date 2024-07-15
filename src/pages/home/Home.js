@@ -35,7 +35,7 @@ export const Home = () => {
   // console.log(`평점좋음: ${topData}`);
   // console.log(`개봉예정: ${upData}`);
 
-  return <>{isLoading ? <Loading /> : "HOME"}</>;
+  return <>{isLoading ? <Loading /> : ""}</>;
 };
 
 // *예외
