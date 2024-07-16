@@ -4,6 +4,7 @@ import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { spacing } from "../../GlobalStyled";
 import { ORIGIN_URL } from "../../constant/imgUrl";
+import { Title } from "../../components/Title";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -90,6 +91,7 @@ export const Home = () => {
 
   return (
     <>
+      <Title titleName="HOME" />
       {isLoading ? (
         <Loading />
       ) : (

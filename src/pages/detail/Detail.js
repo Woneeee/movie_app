@@ -1,3 +1,10 @@
+import { Title } from "../../components/Title";
+
 export const Detail = () => {
-  return <div>Detail</div>;
+  return (
+    <div>
+      <Title titleName={"DETAIL"} />
+      Detail
+    </div>
+  );
 };
