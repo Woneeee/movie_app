@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
-import { colors } from "../GlobalStyled";
+import { colors, spacing } from "../GlobalStyled";
 
 const Container = styled.div`
-  padding: 20px 100px;
+  padding: 20px ${spacing.size};
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,6 +1,32 @@
 import { useEffect, useState } from "react";
 import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
+import styled from "styled-components";
+import { spacing } from "../../GlobalStyled";
+import { ORIGIN_URL } from "../../constant/imgUrl";
+
+const MainBanner = styled.section`
+  height: 80vh;
+  background: url(${ORIGIN_URL}${(props) => props.$bgUrl}) no-repeat center /
+    cover;
+  padding: 350px ${spacing.size};
+  h3 {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    width: 600px;
+    line-height: 30px; /* 기본16px 기준으로 잡으면 됨 */
+    font-size: 20px;
+    opacity: 0.7; /* 문단은 투명도 낮게 */
+    font-weight: 300; /* 타이틀 강조를 위해 */
+  }
+`;
+
+const BlackBg = styled.div``;
 
 export const Home = () => {
   const [nowData, setNowData] = useState();
@@ -30,12 +56,26 @@ export const Home = () => {
   }, []);
 
   console.log(nowData);
-  console.log(isLoading);
+  // console.log(isLoading);
   // console.log(`인기영화:  ${popData}`);
   // console.log(`평점좋음: ${topData}`);
   // console.log(`개봉예정: ${upData}`);
 
-  return <>{isLoading ? <Loading /> : ""}</>;
+  return (
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <MainBanner $bgUrl={nowData[0].backdrop_path}>
+            <BlackBg />
+            <h3>{nowData[0].title}</h3>
+            <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
+          </MainBanner>
+        </>
+      )}
+    </>
+  );
 };
 
 // *예외

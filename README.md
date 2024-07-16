@@ -14,8 +14,9 @@
 ## 설치 항목
 
 - [x] react-Router-dom
-- [ ] styled-components
-- [ ] styled-reset
+- [x] react-spinners
+- [x] styled-components
+- [x] styled-reset
 - [ ] swiper
 - [ ] font-awesome
 - [ ] react-hook-form

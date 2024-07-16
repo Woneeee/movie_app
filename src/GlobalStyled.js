@@ -5,6 +5,10 @@ export const colors = {
   point: "crimson",
 };
 
+export const spacing = {
+  size: "100px",
+};
+
 export const GlobalStyled = createGlobalStyle`
     ${reset}
 
