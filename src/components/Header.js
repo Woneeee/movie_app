@@ -12,6 +12,7 @@ const Container = styled.div`
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 10;
 `;
 
 const Logo = styled.div`

@@ -9,12 +9,14 @@ const MainBanner = styled.section`
   height: 80vh;
   background: url(${ORIGIN_URL}${(props) => props.$bgUrl}) no-repeat center /
     cover;
-  padding: 350px ${spacing.size};
+  padding: 420px ${spacing.size};
+  position: relative;
   h3 {
     font-size: 80px;
     font-weight: 700;
     letter-spacing: -3px;
     margin-bottom: 30px;
+    position: relative;
   }
 
   p {
@@ -26,7 +28,18 @@ const MainBanner = styled.section`
   }
 `;
 
-const BlackBg = styled.div``;
+const BlackBg = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.8) 55%,
+    rgba(255, 255, 255, 0.6251750700280112) 90%
+  );
+`;
 
 export const Home = () => {
   const [nowData, setNowData] = useState();
