@@ -3,8 +3,11 @@ import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { spacing } from "../../GlobalStyled";
-import { ORIGIN_URL } from "../../constant/imgUrl";
+import { ORIGIN_URL, w500_URL } from "../../constant/imgUrl";
 import { Title } from "../../components/Title";
+import { Link } from "react-router-dom";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -51,10 +54,28 @@ const BlackBg = styled.div`
   left: 0;
   background: linear-gradient(
     0deg,
+    rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.8) 55%,
-    rgba(255, 255, 255, 0.6251750700280112) 90%
+    rgba(255, 255, 255, 0) 100%
   );
 `;
+
+const Section = styled.section`
+  padding: 100px 0 100px ${spacing.size};
+`;
+
+const STitle = styled.div`
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+`;
+
+const Con = styled.div`
+  font-size: 18px;
+  margin-top: 20px;
+`;
+
+const MovieTitle = styled.div``;
 
 export const Home = () => {
   const [nowData, setNowData] = useState();
@@ -101,6 +122,20 @@ export const Home = () => {
             <h3>{nowData[0].title}</h3>
             <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
           </MainBanner>
+
+          <Section>
+            <STitle>현재 상영 영화</STitle>
+            <Swiper slidesPerView={7.3} spaceBetween={20}>
+              {nowData.map((data) => (
+                <SwiperSlide key={data.id}>
+                  <Link to={`/detail/${data.id}`}>
+                    <img src={`${w500_URL}${data.poster_path}`} />
+                    <MovieTitle>{data.title}</MovieTitle>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Section>
         </>
       )}
     </>
