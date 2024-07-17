@@ -8,6 +8,7 @@ import { Title } from "../../components/Title";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Movies } from "./components/Movies";
 
 const MainBanner = styled.section`
   height: 80vh;
@@ -60,23 +61,6 @@ const BlackBg = styled.div`
   );
 `;
 
-const Section = styled.section`
-  padding: 100px 0 100px ${spacing.size};
-`;
-
-const STitle = styled.div`
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 30px;
-`;
-
-const Con = styled.div`
-  font-size: 18px;
-  margin-top: 20px;
-`;
-
-const MovieTitle = styled.div``;
-
 export const Home = () => {
   const [nowData, setNowData] = useState();
   const [popData, setPopData] = useState();
@@ -123,19 +107,13 @@ export const Home = () => {
             <p>{nowData[0].overview.slice(0, 100) + "..."}</p>
           </MainBanner>
 
-          <Section>
-            <STitle>현재 상영 영화</STitle>
-            <Swiper slidesPerView={7.3} spaceBetween={20}>
-              {nowData.map((data) => (
-                <SwiperSlide key={data.id}>
-                  <Link to={`/detail/${data.id}`}>
-                    <img src={`${w500_URL}${data.poster_path}`} />
-                    <MovieTitle>{data.title}</MovieTitle>
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </Section>
+          <Movies title={"현재 상영 영화"} movieData={nowData} />
+
+          <Movies title={"인기 영화"} movieData={popData} />
+
+          <Movies title={"평점 좋음"} movieData={topData} />
+
+          <Movies title={"개봉 예정"} movieData={upData} />
         </>
       )}
     </>
