@@ -33,7 +33,7 @@ const params = {
     320: {
       slidesPerView: 3.3,
       spaceBetween: 10,
-    },
+    }, // =>swiper 반응형은 따로 있음 (홈페이지 참고)
   },
 };
 
@@ -57,4 +57,5 @@ export const Movies = ({ title, movieData }) => {
   );
 };
 
-// ... 스프레드 연산자는 중괄호를 빼줌
+// ... 스프레드 연산자
+// =>중괄호를 빼줌
