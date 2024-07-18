@@ -41,13 +41,13 @@ export const Home = () => {
 
   return (
     <>
-      <MainBanner data={nowData[0]} />
-
       <Title titleName="HOME" />
       {isLoading ? (
         <Loading />
       ) : (
         <>
+          <MainBanner data={nowData[0]} />
+
           <Movies title={"현재 상영 영화"} movieData={nowData} />
           <Movies title={"인기 영화"} movieData={popData} />
           <Movies title={"평점 좋음"} movieData={topData} />
