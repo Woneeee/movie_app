@@ -13,7 +13,7 @@ const Container = styled.section`
     font-weight: 700;
     letter-spacing: -3px;
     margin-bottom: 30px;
-    position: relative; // 띄우려고
+    position: relative; // 띄우려고 (가끔 글자가 blckbg뒤로 갈때가 있음 앞으로 해놔도)
   }
 
   p {
