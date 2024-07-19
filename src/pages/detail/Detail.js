@@ -9,11 +9,16 @@ import { useParams } from "react-router-dom";
 const Container = styled.div`
   padding: 150px 20%;
   display: flex;
+
+  @media screen and (max-width: 768px) {
+    padding: 30% 10vw;
+  }
 `;
 
 const CoverImg = styled.img`
   width: 45%;
   margin-right: 5%;
+  object-fit: cover; // 이미지는 절대 찌그러지면 안됨
 `;
 
 const ConWrap = styled.div`
@@ -22,6 +27,12 @@ const ConWrap = styled.div`
     font-size: 70px;
     font-weight: 700;
     margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 40px;
+    }
   }
 `;
 
@@ -36,6 +47,13 @@ const Info = styled.div`
     margin-right: 15px;
   }
   display: flex;
+
+  @media screen and (max-width: 768px) {
+    span {
+      padding: 7px 10px;
+      font-size: 15px;
+    }
+  }
 `;
 
 const Genres = styled.ul`
@@ -46,6 +64,12 @@ const Genres = styled.ul`
   li {
     margin-top: 10px;
   }
+
+  @media screen and (max-width: 768px) {
+    li {
+      font-size: 15px;
+    }
+  }
 `;
 
 const Desc = styled.div`
@@ -54,6 +78,10 @@ const Desc = styled.div`
   opacity: 0.7;
   margin-top: 100px;
   line-height: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 export const Detail = () => {

@@ -8,6 +8,7 @@ const options = {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGVmNTZkYWIzNmRiZmQ4NWRiNzIzMTkzYzZjNzIzNyIsIm5iZiI6MTcyMDY4NjM4NC4zNDA4NDMsInN1YiI6IjY0ODY5ZjgxYzAzNDhiMDEzYzFkNTY3NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8nZDXY863GKt7_CATDZ3yE7-iRn13pQ9Xpnzb3q3rB8",
   },
+  //options: 요청하는 옵션사항들 정의해주는곳
 };
 
 const url = (urlName) => {
@@ -28,3 +29,6 @@ export const upcoming = () =>
 
 export const movieDetail = (movie_id) =>
   fetch(url(`movie/${movie_id}`), options).then((res) => res.json());
+
+// fetch는 url , options 의 정보를 요청해서 요청받아옴
+// fetch는 함수 사용할때 fetch()

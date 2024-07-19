@@ -14,6 +14,7 @@
 ## 설치 항목
 
 - [x] react-Router-dom
+- [x] node-fetch
 - [x] react-spinners
 - [x] styled-components
 - [x] styled-reset
