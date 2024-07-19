@@ -3,63 +3,69 @@ import { Title } from "../../components/Title";
 import { movieDetail } from "../../api";
 import { Loading } from "../../components/Loading";
 import styled from "styled-components";
-import { w500_URL } from "../../constant/imgUrl";
-
-const Section = styled.section`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const AllContainer = styled.div`
-  display: flex;
-`;
-
-const Poster = styled.div``;
+import { ORIGIN_URL } from "../../constant/imgUrl";
+import { useParams } from "react-router-dom";
 
 const Container = styled.div`
-  margin: 40px 50px;
-  font-size: 20px;
-  font-weight: 300;
+  padding: 150px 20%;
+  display: flex;
+`;
+
+const CoverImg = styled.img`
+  width: 45%;
+  margin-right: 5%;
+`;
+
+const ConWrap = styled.div`
+  width: 40%;
   h3 {
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 700;
     margin-bottom: 30px;
   }
 `;
 
-const Intro = styled.div`
-  opacity: 0.8;
-  line-height: 40px;
+const Info = styled.div`
+  span {
+    display: block;
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 15px;
+  }
+  display: flex;
 `;
 
-const Genre = styled.ul`
-  margin-bottom: 50px;
+const Genres = styled.ul`
+  list-style: disc;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
   li {
-    list-style: disc;
-    margin-left: 20px;
+    margin-top: 10px;
   }
 `;
 
-const Overview = styled.div`
-  font-size: 20px;
-  width: 500px;
-  p {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 30px;
-  }
+const Desc = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 100px;
+  line-height: 30px;
 `;
 
 export const Detail = () => {
   const [detail, setDetail] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const { id: movieId } = useParams();
+  console.log(movieId);
 
   useEffect(() => {
     (async () => {
       try {
-        const data = await movieDetail(1022789);
+        const data = await movieDetail(movieId);
 
         setDetail(data);
         setIsLoading(false);
@@ -69,8 +75,9 @@ export const Detail = () => {
     })();
   }, []);
 
-  console.log(detail);
+  // console.log(detail);
   // console.log(isLoading);
+  // 로딩이 없으면 데이터가 불러와지는 척만하고 새로고침하면 사라짐 (필수)
 
   return (
     <>
@@ -79,33 +86,37 @@ export const Detail = () => {
         <Loading />
       ) : (
         <>
-          <Section>
-            <AllContainer>
-              <Poster>
-                <img src={w500_URL + detail.poster_path} alt="영화포스터" />
-              </Poster>
+          <Container>
+            <CoverImg
+              src={ORIGIN_URL + detail.poster_path}
+              alt={detail.title}
+            />
+            <ConWrap>
+              <h3>{detail.title}</h3>
+              <Info>
+                <span>{detail.release_date}</span>
 
-              <Container>
-                <h3>{detail.title}</h3>
-                <Intro>
-                  <p>{`런타임 ${detail.runtime}분`}</p>
-                  <p>개봉일 {detail.release_date}</p>
-                  <Genre>
-                    장르
-                    <li>{detail.genres[0].name}</li>
-                    <li>{detail.genres[1].name}</li>
-                  </Genre>
-                </Intro>
+                <span>{Math.round(detail.vote_average)}점</span>
 
-                <Overview>
-                  줄거리
-                  <p>{detail.overview.slice(0, 400)}</p>
-                </Overview>
-              </Container>
-            </AllContainer>
-          </Section>
+                <span>{detail.runtime}분</span>
+              </Info>
+
+              <Genres>
+                {detail.genres.map((gene) => (
+                  <li key={gene.id}>{gene.name}</li>
+                ))}
+              </Genres>
+
+              <Desc>{detail.overview}</Desc>
+            </ConWrap>
+          </Container>
         </>
       )}
     </>
   );
 };
+
+// import 자동완성
+// =>폴더 열어놓고 ctrl space
+
+// 웹표준을 안지키면 검색에 노출이 안됨 마케팅이 안됨

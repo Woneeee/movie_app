@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { Loading } from "../../components/Loading";
 import { Title } from "../../components/Title";
-import "swiper/css";
+import "swiper/css"; //이걸 안넣으면 가로배치가 안됨 제대로된 swiper 모양이 안나옴
 import { Movies } from "./components/Movies";
 import { MainBanner } from "./components/MainBanner";
 
