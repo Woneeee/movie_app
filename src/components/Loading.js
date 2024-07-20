@@ -1,4 +1,4 @@
-import { SquareLoader } from "react-spinners";
+import { PuffLoader, SquareLoader } from "react-spinners";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -12,7 +12,7 @@ const Container = styled.div`
 export const Loading = () => {
   return (
     <Container>
-      <SquareLoader color="crimson" />
+      <PuffLoader size={40} color="crimson" />
     </Container>
   );
 };

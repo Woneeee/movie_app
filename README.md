@@ -6,8 +6,8 @@
 - [x] Loading 컴포넌트 구성
 - [x] Header, Footer 컴포넌트 구성
 - [x] 웹폰트 설정
-- [ ] 각 페이지 UI 구성과 반응형
-- [ ] Helmet
+- [x] 각 페이지 UI 구성과 반응형
+- [x] Helmet
 - [ ] Header scroll Event
 - [ ] Deploy
 
@@ -18,8 +18,8 @@
 - [x] react-spinners
 - [x] styled-components
 - [x] styled-reset
-- [ ] swiper
+- [x] swiper
 - [ ] font-awesome
 - [ ] react-hook-form
-- [ ] helmet-async
+- [x] helmet-async
 - [ ] react-icons

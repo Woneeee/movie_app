@@ -14,11 +14,6 @@ const STitle = styled.div`
   margin-bottom: 30px;
 `;
 
-const Con = styled.div`
-  font-size: 18px;
-  margin-top: 20px;
-`;
-
 const params = {
   slidesPerView: 7.3,
   spaceBetween: 20,
@@ -37,7 +32,10 @@ const params = {
   },
 };
 
-const MovieTitle = styled.div``;
+const MovieTitle = styled.div`
+  font-size: 18px;
+  margin-top: 10px;
+`;
 
 export const Movies = ({ title, movieData }) => {
   return (
