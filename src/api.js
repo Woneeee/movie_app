@@ -30,5 +30,10 @@ export const upcoming = () =>
 export const movieDetail = (movie_id) =>
   fetch(url(`movie/${movie_id}`), options).then((res) => res.json());
 
+export const searchMovie = (keyword) => {
+  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
+  return fetch(searchUrl, options).then((res) => res.json());
+};
+
 // fetch는 url , options 의 정보를 요청해서 요청받아옴
 // fetch는 함수 사용할때 fetch()

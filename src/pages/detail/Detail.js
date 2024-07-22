@@ -109,12 +109,12 @@ export const Detail = () => {
 
   return (
     <>
-      <Title titleName={"DETAIL"} />
       {isLoading ? (
         <Loading />
       ) : (
         <>
           <Container>
+            <Title titleName={detail.title} />
             <CoverImg
               src={ORIGIN_URL + detail.poster_path}
               alt={detail.title}
