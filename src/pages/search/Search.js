@@ -102,8 +102,8 @@ export const Search = () => {
         <ErrorMessage>{errors?.keyword?.message}</ErrorMessage>
       </Form>
 
-      {searchData.length === 0 ? (
-        "검색결과없음"
+      {searchData?.length === 0 ? (
+        "검색 결과 없음"
       ) : (
         <>
           {searchData && (
