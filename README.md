@@ -9,7 +9,7 @@
 - [x] 각 페이지 UI 구성과 반응형
 - [x] Helmet
 - [x] Header scroll Event
-- [ ] Deploy
+- [x] Deploy
 
 ## 설치 항목
 
@@ -23,3 +23,12 @@
 - [x] react-hook-form
 - [x] helmet-async
 - [x] react-icons
+
+## 기획때 추가할 것
+
+- 홈 - 인기시리즈, 급상승 영화, 오늘의 선택
+- 예고편
+- 무한스크롤
+- 동글동글 디자인
+- 반응형
+- mainbanner 랜덤으로 바뀌기
