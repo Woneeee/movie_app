@@ -42,6 +42,7 @@ const ErrorMessage = styled.h4`
   color: gold;
   font-size: 18px;
   margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 const ConWrap = styled.div`
@@ -134,6 +135,6 @@ export const Search = () => {
   );
 };
 
-// loading 옵셔널체이닝 &&
+// undefined error: loading 옵셔널체이닝 &&
 // flex-wrap: wrap; 하면 나오긴함
 // background 단점: 검색이안됨 alt 없음
