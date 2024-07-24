@@ -1,4 +1,4 @@
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Title } from "../../components/Title";
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
@@ -81,7 +81,7 @@ export const Search = () => {
     setIsLoading(false);
   };
 
-  console.log(searchData);
+  // console.log(searchData);
   // console.log(isLoading);
 
   return (
